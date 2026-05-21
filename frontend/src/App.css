@@ -1,0 +1,355 @@
+:root {
+  --bg: #0f172a;
+  --bg-soft: #1e293b;
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: rgba(255,255,255,0.08);
+  --accent: #8b5cf6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #1e293b, #0f172a 70%);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+}
+
+/* ================= LAYOUT ================= */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* ================= TOPBAR ================= */
+
+.topbar {
+  position: relative;
+  padding: 30px 50px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-center {
+  text-align: center;
+}
+
+.brand-center h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.brand-center span {
+  font-size: 20px;
+  color: var(--text-muted);
+}
+
+.brand-logo {
+  font-size: 38px;
+  margin-bottom: 8px;
+}
+
+.top-actions {
+  position: absolute;
+  right: 50px;
+  display: flex;
+  gap: 20px;
+}
+
+.status-pill,
+.model-pill {
+  background: rgba(255,255,255,0.06);
+  padding: 12px 20px;
+  border-radius: 24px;
+  font-size: 18px;
+}
+
+/* ================= BODY ================= */
+
+.body-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+  width: 380px;
+  background: #0b1220;
+  padding: 40px;
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+}
+
+.sidebar h4 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.db-card {
+  background: rgba(139,92,246,0.15);
+  border: 1px solid rgba(139,92,246,0.4);
+  padding: 18px;
+  border-radius: 14px;
+  margin-bottom: 30px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.menu p {
+  font-size: 22px;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.menu li {
+  padding: 16px 18px;
+  border-radius: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  margin-bottom: 8px;
+}
+
+.menu li:hover {
+  background: rgba(139,92,246,0.2);
+}
+
+/* ================= MAIN ================= */
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0 100px;   /* breathing space */
+}
+
+/* ================= CHAT ================= */
+
+.chat-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 50px 0 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Message rows */
+.chat-bubble-row {
+  display: flex;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+/* AI left */
+.chat-bubble-row.bot {
+  justify-content: flex-start;
+}
+
+/* User right */
+.chat-bubble-row.user {
+  justify-content: flex-end;
+}
+
+/* Bubble wrapper */
+.bubble-content {
+  display: flex;
+  gap: 24px;
+  max-width: 1200px;  /* wider layout */
+  width: auto;
+}
+
+/* Avatar */
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: #22d3ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.user .avatar {
+  background: var(--accent);
+}
+
+/* Message bubble */
+.msg-body {
+  background: var(--bg-soft);
+  padding: 30px;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  font-size: 40px;
+  line-height: 1.6;
+  width: fit-content;     /* 👈 makes user align right properly */
+  max-width: 1000px;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.empty-state h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.empty-state p {
+  font-size: 22px;
+  color: var(--text-muted);
+}
+
+/* ================= GRAPH ================= */
+
+.graph-container {
+  margin-top: 25px;
+  background: linear-gradient(145deg, #111827, #0f172a);
+  border-radius: 24px;
+  padding: 35px;
+  border: 1px solid rgba(139,92,246,0.2);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+/* ================= TABLE ================= */
+
+.table-wrapper {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 19px;
+  background: #111827;
+  border-radius: 16px;
+}
+
+th {
+  padding: 20px;
+  font-size: 17px;
+  background: rgba(255,255,255,0.05);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+td {
+  padding: 20px;
+  border-top: 1px solid var(--border);
+}
+
+tr:hover {
+  background: rgba(139,92,246,0.15);
+}
+
+/* ================= INPUT ================= */
+
+.input-container {
+  position: fixed;
+  bottom: 0;
+  left: 380px;
+  right: 0;
+  padding: 30px 100px;
+  background: linear-gradient(transparent, #0f172a 40%);
+}
+
+.input-box {
+  max-width: 2000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  background: #1e293b;
+  border-radius: 28px;
+  padding: 32px 40px;
+  border: 1px solid var(--border);
+  min-height: 80px;
+}
+
+input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 30px;
+  outline: none;
+  line-height: 1.5;
+}
+
+input::placeholder {
+  color: var(--text-muted);
+}
+
+button {
+  background: var(--accent);
+  border: none;
+  border-radius: 14px;
+  padding: 18px 32px;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #7c3aed;
+  transform: scale(1.05);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+/* --- New Scrollable Wrapper Styles --- */
+
+.scrollable-chart-wrapper {
+  width: 100%;
+  overflow-x: auto; /* This enables the horizontal scroll */
+  overflow-y: hidden;
+  padding-bottom: 20px;
+  cursor: grab;
+}
+
+/* Custom Scrollbar to match your --accent color */
+.scrollable-chart-wrapper::-webkit-scrollbar {
+  height: 10px;
+}
+
+.scrollable-chart-wrapper::-webkit-scrollbar-track {
+  background: var(--bg-soft);
+  border-radius: 10px;
+}
+
+.scrollable-chart-wrapper::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+  border: 2px solid var(--bg-soft);
+}
+
+.scrollable-chart-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}
+
+/* Ensure the graph container doesn't cut off the rotated labels */
+.graph-container {
+  overflow: hidden; 
+  min-height: 650px; /* Increased to accommodate rotated X-axis labels */
+}
